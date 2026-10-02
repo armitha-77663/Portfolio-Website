@@ -1,0 +1,11 @@
+@import "tailwindcss";
+@theme{--font-display:"Bricolage Grotesque",system-ui,sans-serif;--font-sans:"Figtree",system-ui,sans-serif;
+--color-bg:#14141b;--color-panel:#1b1b25;--color-line:#2c2c3b;--color-violet:#9b8cff;--color-cyan:#5fd4ff;--color-mute:#a3a3b8}
+html{scroll-behavior:smooth;scroll-padding-top:5rem}
+body{background:var(--color-bg);color:#ecebf5;font-family:var(--font-sans);overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.05;z-index:60;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence baseFrequency='.9' numOctaves='2'/></filter><rect width='120' height='120' filter='url(%23n)'/></svg>")}
+:focus-visible{outline:2px solid var(--color-cyan);outline-offset:3px;border-radius:6px}
+.card{background:var(--color-panel);border:1px solid var(--color-line);border-radius:1.25rem}
+@keyframes ping{0%{transform:scale(.4);opacity:.8}100%{transform:scale(1.6);opacity:0}}
+.ring{animation:ping 2.4s ease-out infinite}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
